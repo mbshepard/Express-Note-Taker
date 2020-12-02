@@ -15,6 +15,10 @@ module.exports = function(app) {
   // In each of the below cases the user is shown an HTML page of content
   // ---------------------------------------------------------------------------
 
+  app.get("/", function(req, res) {
+    res.json(path.join(__dirname, "../public/assets/index.html"));
+  });
+
   app.get("/notes", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/notes.html"));
   });
